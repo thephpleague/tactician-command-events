@@ -1,0 +1,5 @@
+suites:
+  tactician_suite:
+    namespace: League\Tactician
+    psr4_prefix: League\Tactician
+formatter.name: pretty
