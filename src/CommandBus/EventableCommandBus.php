@@ -52,7 +52,7 @@ class EventableCommandBus implements CommandBus
         } catch (\Exception $e) {
             $this->emit($event = new Event\CommandFailed($command, $e));
 
-            if (!$event->isHandled()) {
+            if (!$event->isExceptionHandled()) {
                 throw $e;
             }
         }

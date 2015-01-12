@@ -29,10 +29,10 @@ class CommandFailedSpec extends ObjectBehavior
 
     function it_is_unhandled_by_default()
     {
-        $this->isHandled()->shouldReturn(false);
+        $this->isExceptionHandled()->shouldReturn(false);
 
-        $this->handle();
+        $this->handleException();
 
-        $this->isHandled()->shouldReturn(true);
+        $this->isExceptionHandled()->shouldReturn(true);
     }
 }
