@@ -1,7 +1,7 @@
 suites:
   tactician_suite:
-    namespace: League\Tacticia
-    psr4_prefix: League\Tacticia
+    namespace: League\Tactician
+    psr4_prefix: League\Tactician
 extensions:
   - PhpSpec\Extension\CodeCoverageExtension
 formatter.name: pretty
