@@ -2,7 +2,7 @@
 
 [![Latest Version](https://img.shields.io/github/release/indigophp/tactician-event-decorator.svg?style=flat-square)](https://github.com/indigophp/tactician-event-decorator/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Build Status](https://img.shields.io/travis/indigophp/tactician-event-decorator/develop.svg?style=flat-square)](https://travis-ci.org/indigophp/tactician-event-decorator)
+[![Build Status](https://img.shields.io/travis/indigophp/tactician-event-decorator.svg?style=flat-square)](https://travis-ci.org/indigophp/tactician-event-decorator)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/indigophp/tactician-event-decorator.svg?style=flat-square)](https://scrutinizer-ci.com/g/indigophp/tactician-event-decorator)
 [![Quality Score](https://img.shields.io/scrutinizer/g/indigophp/tactician-event-decorator.svg?style=flat-square)](https://scrutinizer-ci.com/g/indigophp/tactician-event-decorator)
 [![HHVM Status](https://img.shields.io/hhvm/indigophp/tactician-event-decorator.svg?style=flat-square)](http://hhvm.h4cc.de/package/indigophp/tactician-event-decorator)
