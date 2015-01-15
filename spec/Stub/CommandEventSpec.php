@@ -2,7 +2,7 @@
 
 namespace spec\League\Tactician\Stub;
 
-use League\Tactician\CommandBus\Command;
+use League\Tactician\Command;
 use PhpSpec\ObjectBehavior;
 
 class CommandEventSpec extends ObjectBehavior

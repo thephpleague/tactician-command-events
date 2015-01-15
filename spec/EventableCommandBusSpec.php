@@ -1,10 +1,10 @@
 <?php
 
-namespace spec\League\Tactician\CommandBus;
+namespace spec\League\Tactician;
 
 use League\Event\EmitterInterface;
-use League\Tactician\CommandBus\Command;
-use League\Tactician\CommandBus\CommandBus;
+use League\Tactician\Command;
+use League\Tactician\CommandBus;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -17,12 +17,12 @@ class EventableCommandBusSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('League\Tactician\CommandBus\EventableCommandBus');
+        $this->shouldHaveType('League\Tactician\EventableCommandBus');
     }
 
     function it_is_a_command_bus()
     {
-        $this->shouldImplement('League\Tactician\CommandBus\CommandBus');
+        $this->shouldImplement('League\Tactician\CommandBus');
     }
 
     function it_uses_emitter_trait()

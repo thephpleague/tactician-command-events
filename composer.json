@@ -1,9 +1,9 @@
 {
-    "name": "indigophp/tactician-event-decorator",
-    "description": "Event decorator for Tactician CommandBus implementations",
+    "name": "league/tactician-command-events",
+    "description": "Tactician Command Events",
     "license": "MIT",
     "keywords": ["event", "tactician"],
-    "homepage": "https://indigophp.com",
+    "homepage": "https://tactician.thephpleague.com",
     "authors": [
         {
             "name": "Márk Sági-Kazár",
