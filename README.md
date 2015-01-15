@@ -10,9 +10,6 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/thephpleague/tactician-command-events.svg?style=flat-square)](https://packagist.org/packages/thephpleague/tactician-command-events)
 
 
-**Tactician Command Events**
-
-
 ## Install
 
 Via Composer
@@ -71,6 +68,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 
+- [Ross Tuck](https://github.com/rosstuck)
 - [Márk Sági-Kazár](https://github.com/sagikazarmark)
 - [All Contributors](https://github.com/thephpleague/tactician-command-events/contributors)
 
