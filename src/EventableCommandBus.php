@@ -48,9 +48,9 @@ class EventableCommandBus implements CommandBus
         try {
             $this->innerCommandBus->execute($command);
 
-            $this->emit(new Event\CommandExecuted($command));
+            $this->emit(new CommandEvents\CommandExecuted($command));
         } catch (\Exception $e) {
-            $this->emit($event = new Event\CommandFailed($command, $e));
+            $this->emit($event = new CommandEvents\CommandFailed($command, $e));
 
             if (!$event->isExceptionHandled()) {
                 throw $e;

@@ -11,7 +11,7 @@
 
 namespace League\Tactician\Stub;
 
-use League\Tactician\Event\CommandEvent as Event;
+use League\Tactician\CommandEvents\CommandEvent as Event;
 
 /**
  * Command Event Stub

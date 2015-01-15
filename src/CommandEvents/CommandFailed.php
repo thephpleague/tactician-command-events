@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace League\Tactician\Event;
+namespace League\Tactician\CommandEvents;
 
 use League\Tactician\Command;
 

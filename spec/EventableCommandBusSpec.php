@@ -42,7 +42,7 @@ class EventableCommandBusSpec extends ObjectBehavior
         $this->beConstructedWith($commandBus, $emitter);
 
         $commandBus->execute($command)->shouldBeCalled();
-        $emitter->emit(Argument::type('League\Tactician\Event\CommandExecuted'))->shouldBeCalled();
+        $emitter->emit(Argument::type('League\Tactician\CommandEvents\CommandExecuted'))->shouldBeCalled();
 
         $this->execute($command);
     }
@@ -52,7 +52,7 @@ class EventableCommandBusSpec extends ObjectBehavior
         $this->beConstructedWith($commandBus, $emitter);
 
         $commandBus->execute($command)->willThrow('Exception');
-        $emitter->emit(Argument::type('League\Tactician\Event\CommandFailed'))->shouldBeCalled();
+        $emitter->emit(Argument::type('League\Tactician\CommandEvents\CommandFailed'))->shouldBeCalled();
 
         $this->shouldThrow('Exception')->duringExecute($command);
     }
@@ -62,7 +62,7 @@ class EventableCommandBusSpec extends ObjectBehavior
         $this->beConstructedWith($commandBus, $emitter);
 
         $commandBus->execute($command)->willThrow('Exception');
-        $emitter->emit(Argument::type('League\Tactician\Event\CommandFailed'))->will(function($args) {
+        $emitter->emit(Argument::type('League\Tactician\CommandEvents\CommandFailed'))->will(function($args) {
             $args[0]->handleException();
         });
 

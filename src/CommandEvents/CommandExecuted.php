@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace League\Tactician\Event;
+namespace League\Tactician\CommandEvents;
 
 /**
  * Emitted when a command is executed
