@@ -3,7 +3,7 @@
     "description": "Tactician Command Events",
     "license": "MIT",
     "keywords": ["event", "tactician"],
-    "homepage": "https://tactician.thephpleague.com",
+    "homepage": "http://tactician.thephpleague.com",
     "authors": [
         {
             "name": "Márk Sági-Kazár",
@@ -31,7 +31,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-develop": "1.0-dev"
+            "dev-master": "0.1.0-dev"
         }
     },
     "prefer-stable": true,
