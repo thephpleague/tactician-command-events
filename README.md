@@ -7,7 +7,7 @@
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/thephpleague/tactician-command-events.svg?style=flat-square)](https://scrutinizer-ci.com/g/thephpleague/tactician-command-events)
 [![Quality Score](https://img.shields.io/scrutinizer/g/thephpleague/tactician-command-events.svg?style=flat-square)](https://scrutinizer-ci.com/g/thephpleague/tactician-command-events)
 [![HHVM Status](https://img.shields.io/hhvm/thephpleague/tactician-command-events.svg?style=flat-square)](http://hhvm.h4cc.de/package/thephpleague/tactician-command-events)
-[![Total Downloads](https://img.shields.io/packagist/dt/thephpleague/tactician-command-events.svg?style=flat-square)](https://packagist.org/packages/thephpleague/tactician-command-events)
+[![Total Downloads](https://img.shields.io/packagist/dt/thephpleague/tactician-command-events.svg?style=flat-square)](https://packagist.org/packages/league/tactician-command-events)
 
 
 ## Install
