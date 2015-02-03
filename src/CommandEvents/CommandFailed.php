@@ -20,11 +20,11 @@ class CommandFailed extends CommandEvent
     protected $exception;
 
     /**
-     * Checks whether exception is handled
+     * Checks whether exception is caught
      *
      * @var boolean
      */
-    protected $exceptionHandled = false;
+    protected $exceptionCaught = false;
 
     /**
      * @param Command    $command
@@ -48,20 +48,20 @@ class CommandFailed extends CommandEvent
     }
 
     /**
-     * Indicates that exception is handled
+     * Indicates that exception is caught
      */
-    public function handleException()
+    public function catchException()
     {
-        $this->exceptionHandled = true;
+        $this->exceptionCaught = true;
     }
 
     /**
-     * Checks whether exception is handled
+     * Checks whether exception is caught
      *
      * @return boolean
      */
-    public function isExceptionHandled()
+    public function isExceptionCaught()
     {
-        return $this->exceptionHandled;
+        return $this->exceptionCaught;
     }
 }

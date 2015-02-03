@@ -56,7 +56,7 @@ class EventableCommandBusSpec extends ObjectBehavior
     {
         $commandBus->execute($command)->willThrow('Exception');
         $emitter->emit(Argument::type('League\Tactician\CommandEvents\CommandFailed'))->will(function($args) {
-            $args[0]->handleException();
+            $args[0]->catchException();
         });
 
         $this->shouldNotThrow('Exception')->duringExecute($command);

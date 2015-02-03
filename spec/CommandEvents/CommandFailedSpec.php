@@ -27,12 +27,12 @@ class CommandFailedSpec extends ObjectBehavior
         $this->getException()->shouldReturn($e);
     }
 
-    function it_is_unhandled_by_default()
+    function it_is_not_caught_by_default()
     {
-        $this->isExceptionHandled()->shouldReturn(false);
+        $this->isExceptionCaught()->shouldReturn(false);
 
-        $this->handleException();
+        $this->catchException();
 
-        $this->isExceptionHandled()->shouldReturn(true);
+        $this->isExceptionCaught()->shouldReturn(true);
     }
 }
