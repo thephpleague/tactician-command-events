@@ -21,6 +21,12 @@ $ composer require league/tactician-command-events
 
 ## Usage
 
+Currently the following events are emitted:
+
+- `CommandReceived`: Emitted when the command bus receives the command
+- `CommandExecuted`: Emitted when the command bus successfully executes the command
+- `CommandFailed`: Emitted when the command execution failed
+
 When the command ran without failures:
 
 ```php

@@ -46,6 +46,8 @@ class EventableCommandBus implements CommandBus
     public function execute(Command $command)
     {
         try {
+            $this->emit(new CommandEvents\CommandReceived($command));
+
             $this->innerCommandBus->execute($command);
 
             $this->emit(new CommandEvents\CommandExecuted($command));
