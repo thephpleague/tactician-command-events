@@ -1,22 +1,11 @@
 <?php
 
-/*
- * This file is part of the Tactician Command Events package.
- *
- * (c) Márk Sági-Kazár <mark.sagikazar@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace League\Tactician\CommandEvents;
 
 use League\Tactician\Command;
 
 /**
  * Emitted when a command fails
- *
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
 class CommandFailed extends CommandEvent
 {
