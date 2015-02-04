@@ -7,26 +7,21 @@ use League\Event\EmitterTrait;
 use League\Tactician\Event;
 
 /**
- * Decorates a command bus with event-driven functionality
+ * Extends the standard command bus with event-driven functionality
  */
-class EventableCommandBus implements CommandBus
+class EventableCommandBus extends StandardCommandBus
 {
     use EmitterTrait;
 
     /**
-     * @var CommandBus
-     */
-    protected $innerCommandBus;
-
-    /**
-     * @param CommandBus            $innerCommandBus
+     * @param array                 $middleware
      * @param EmitterInterface|null $emitter
      */
-    public function __construct(CommandBus $innerCommandBus, EmitterInterface $emitter = null)
+    public function __construct(array $middleware, EmitterInterface $emitter = null)
     {
-        $this->innerCommandBus = $innerCommandBus;
-
         $this->setEmitter($emitter);
+
+        parent::__construct($middleware);
     }
 
     /**
@@ -37,7 +32,7 @@ class EventableCommandBus implements CommandBus
         try {
             $this->emit(new CommandEvents\CommandReceived($command));
 
-            $this->innerCommandBus->execute($command);
+            parent::execute($command);
 
             $this->emit(new CommandEvents\CommandExecuted($command));
         } catch (\Exception $e) {

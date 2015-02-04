@@ -4,15 +4,14 @@ namespace spec\League\Tactician;
 
 use League\Event\EmitterInterface as Emitter;
 use League\Tactician\Command;
-use League\Tactician\CommandBus;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
 class EventableCommandBusSpec extends ObjectBehavior
 {
-    function let(CommandBus $commandBus, Emitter $emitter)
+    function let(Emitter $emitter)
     {
-        $this->beConstructedWith($commandBus, $emitter);
+        $this->beConstructedWith([], $emitter);
     }
 
     function it_is_initializable()
@@ -22,7 +21,7 @@ class EventableCommandBusSpec extends ObjectBehavior
 
     function it_is_a_command_bus()
     {
-        $this->shouldImplement('League\Tactician\CommandBus');
+        $this->shouldHaveType('League\Tactician\StandardCommandBus');
     }
 
     function it_uses_emitter_trait()
@@ -30,31 +29,28 @@ class EventableCommandBusSpec extends ObjectBehavior
         $this->shouldUseTrait('League\Event\EmitterTrait');
     }
 
-    function it_accepts_an_emitter_in_the_constructor(CommandBus $commandBus, Emitter $emitter)
+    function it_accepts_an_emitter_in_the_constructor(Emitter $emitter)
     {
         $this->getEmitter()->shouldReturn($emitter);
     }
 
-    function it_executes_a_command_using_the_decorated_bus(CommandBus $commandBus, Command $command, Emitter $emitter)
+    function it_executes_a_command_using_the_decorated_bus(Command $command, Emitter $emitter)
     {
-        $commandBus->execute($command)->shouldBeCalled();
         $emitter->emit(Argument::type('League\Tactician\CommandEvents\CommandReceived'))->shouldBeCalled();
         $emitter->emit(Argument::type('League\Tactician\CommandEvents\CommandExecuted'))->shouldBeCalled();
 
         $this->execute($command);
     }
 
-    function it_executes_a_faulty_command_and_fails(CommandBus $commandBus, Command $command, Emitter $emitter)
+    function it_executes_a_faulty_command_and_fails(Command $command, Emitter $emitter)
     {
-        $commandBus->execute($command)->willThrow('Exception');
         $emitter->emit(Argument::type('League\Tactician\CommandEvents\CommandFailed'))->shouldBeCalled();
 
         $this->shouldThrow('Exception')->duringExecute($command);
     }
 
-    function it_executes_a_faulty_command_and_handles_the_exception(CommandBus $commandBus, Command $command, Emitter $emitter)
+    function it_executes_a_faulty_command_and_handles_the_exception(Command $command, Emitter $emitter)
     {
-        $commandBus->execute($command)->willThrow('Exception');
         $emitter->emit(Argument::type('League\Tactician\CommandEvents\CommandFailed'))->will(function($args) {
             $args[0]->catchException();
         });
