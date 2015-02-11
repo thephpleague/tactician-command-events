@@ -19,7 +19,7 @@ class CommandEventSpec extends ObjectBehavior
 
     function it_is_an_event()
     {
-        $this->shouldHaveType('League\Tactician\CommandEvents\CommandEvent');
+        $this->shouldHaveType('League\Tactician\CommandEvents\Event\CommandEvent');
         $this->shouldImplement('League\Event\EventInterface');
     }
 

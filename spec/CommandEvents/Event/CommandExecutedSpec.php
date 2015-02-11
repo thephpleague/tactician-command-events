@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\League\Tactician\CommandEvents;
+namespace spec\League\Tactician\CommandEvents\Event;
 
 use League\Tactician\Command;
 use PhpSpec\ObjectBehavior;
@@ -14,11 +14,11 @@ class CommandExecutedSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('League\Tactician\CommandEvents\CommandExecuted');
+        $this->shouldHaveType('League\Tactician\CommandEvents\Event\CommandExecuted');
     }
 
     function it_is_a_command_event()
     {
-        $this->shouldHaveType('League\Tactician\CommandEvents\CommandEvent');
+        $this->shouldHaveType('League\Tactician\CommandEvents\Event\CommandEvent');
     }
 }

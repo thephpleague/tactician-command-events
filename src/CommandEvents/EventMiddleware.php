@@ -1,9 +1,9 @@
 <?php
 
-namespace League\Tactician\Plugins;
+namespace League\Tactician\CommandEvents;
 
 use League\Event\EmitterInterface;
-use League\Tactician\CommandEvents;
+use League\Tactician\CommandEvents\Event;
 use League\Tactician\Command;
 use League\Tactician\Middleware;
 
@@ -31,15 +31,15 @@ class EventMiddleware implements Middleware
     public function execute(Command $command, callable $next)
     {
         try {
-            $this->emitter->emit(new CommandEvents\CommandReceived($command));
+            $this->emitter->emit(new Event\CommandReceived($command));
 
             $returnValue = $next($command);
 
-            $this->emitter->emit(new CommandEvents\CommandExecuted($command));
+            $this->emitter->emit(new Event\CommandExecuted($command));
 
             return $returnValue;
         } catch (\Exception $e) {
-            $this->emitter->emit($event = new CommandEvents\CommandFailed($command, $e));
+            $this->emitter->emit($event = new Event\CommandFailed($command, $e));
 
             if (!$event->isExceptionCaught()) {
                 throw $e;
