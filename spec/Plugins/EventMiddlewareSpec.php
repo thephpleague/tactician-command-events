@@ -1,37 +1,27 @@
 <?php
 
-namespace spec\League\Tactician;
+namespace spec\League\Tactician\Plugins;
 
 use League\Event\EmitterInterface as Emitter;
 use League\Tactician\Command;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class EventableCommandBusSpec extends ObjectBehavior
+class EventMiddlewareSpec extends ObjectBehavior
 {
     function let(Emitter $emitter)
     {
-        $this->beConstructedWith([], $emitter);
+        $this->beConstructedWith($emitter);
     }
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('League\Tactician\EventableCommandBus');
+        $this->shouldHaveType('League\Tactician\Plugins\EventMiddleware');
     }
 
-    function it_is_a_command_bus()
+    function it_is_a_middleware()
     {
-        $this->shouldHaveType('League\Tactician\StandardCommandBus');
-    }
-
-    function it_uses_emitter_trait()
-    {
-        $this->shouldUseTrait('League\Event\EmitterTrait');
-    }
-
-    function it_accepts_an_emitter_in_the_constructor(Emitter $emitter)
-    {
-        $this->getEmitter()->shouldReturn($emitter);
+        $this->shouldImplement('League\Tactician\Middleware');
     }
 
     function it_executes_a_command_using_the_decorated_bus(Command $command, Emitter $emitter)
@@ -39,14 +29,14 @@ class EventableCommandBusSpec extends ObjectBehavior
         $emitter->emit(Argument::type('League\Tactician\CommandEvents\CommandReceived'))->shouldBeCalled();
         $emitter->emit(Argument::type('League\Tactician\CommandEvents\CommandExecuted'))->shouldBeCalled();
 
-        $this->execute($command);
+        $this->execute($command, function() {});
     }
 
     function it_executes_a_faulty_command_and_fails(Command $command, Emitter $emitter)
     {
         $emitter->emit(Argument::type('League\Tactician\CommandEvents\CommandFailed'))->shouldBeCalled();
 
-        $this->shouldThrow('Exception')->duringExecute($command);
+        $this->shouldThrow('Exception')->duringExecute($command, function() {});
     }
 
     function it_executes_a_faulty_command_and_handles_the_exception(Command $command, Emitter $emitter)
@@ -55,15 +45,6 @@ class EventableCommandBusSpec extends ObjectBehavior
             $args[0]->catchException();
         });
 
-        $this->shouldNotThrow('Exception')->duringExecute($command);
-    }
-
-    public function getMatchers()
-    {
-        return [
-            'useTrait' => function ($subject, $trait) {
-                return class_uses($subject, $trait);
-            }
-        ];
+        $this->shouldNotThrow('Exception')->duringExecute($command, function() {});
     }
 }
