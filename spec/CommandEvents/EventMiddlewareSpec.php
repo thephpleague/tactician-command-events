@@ -24,7 +24,12 @@ class EventMiddlewareSpec extends ObjectBehavior
         $this->shouldImplement('League\Tactician\Middleware');
     }
 
-    function it_executes_a_command_using_the_decorated_bus(Command $command, Emitter $emitter)
+    function it_is_aan_emitter_aware()
+    {
+        $this->shouldImplement('League\Event\EmitterAwareInterface');
+    }
+
+    function it_executes_a_command(Command $command, Emitter $emitter)
     {
         $emitter->emit(Argument::type('League\Tactician\CommandEvents\Event\CommandReceived'))->shouldBeCalled();
         $emitter->emit(Argument::type('League\Tactician\CommandEvents\Event\CommandExecuted'))->shouldBeCalled();

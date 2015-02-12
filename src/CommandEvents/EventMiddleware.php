@@ -2,7 +2,9 @@
 
 namespace League\Tactician\CommandEvents;
 
+use League\Event\EmitterAwareInterface;
 use League\Event\EmitterInterface;
+use League\Event\EmitterTrait;
 use League\Tactician\CommandEvents\Event;
 use League\Tactician\Command;
 use League\Tactician\Middleware;
@@ -10,19 +12,16 @@ use League\Tactician\Middleware;
 /**
  * Provides an event-driven middleware functionality
  */
-class EventMiddleware implements Middleware
+class EventMiddleware implements Middleware, EmitterAwareInterface
 {
-    /**
-     * @var EmitterInterface
-     */
-    protected $emitter;
+    use EmitterTrait;
 
     /**
      * @param EmitterInterface $emitter
      */
-    public function __construct(EmitterInterface $emitter)
+    public function __construct(EmitterInterface $emitter = null)
     {
-        $this->emitter = $emitter;
+        $this->setEmitter($emitter);
     }
 
     /**
@@ -31,15 +30,15 @@ class EventMiddleware implements Middleware
     public function execute(Command $command, callable $next)
     {
         try {
-            $this->emitter->emit(new Event\CommandReceived($command));
+            $this->getEmitter()->emit(new Event\CommandReceived($command));
 
             $returnValue = $next($command);
 
-            $this->emitter->emit(new Event\CommandExecuted($command));
+            $this->getEmitter()->emit(new Event\CommandExecuted($command));
 
             return $returnValue;
         } catch (\Exception $e) {
-            $this->emitter->emit($event = new Event\CommandFailed($command, $e));
+            $this->getEmitter()->emit($event = new Event\CommandFailed($command, $e));
 
             if (!$event->isExceptionCaught()) {
                 throw $e;
