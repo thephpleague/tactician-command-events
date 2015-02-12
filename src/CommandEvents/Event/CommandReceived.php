@@ -10,5 +10,5 @@ class CommandReceived extends CommandEvent
     /**
      * {@inheritdoc}
      */
-    protected $name = 'commandReceived';
+    protected $name = 'command.received';
 }

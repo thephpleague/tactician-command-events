@@ -12,7 +12,7 @@ class CommandFailed extends CommandEvent
     /**
      * {@inheritdoc}
      */
-    protected $name = 'commandFailed';
+    protected $name = 'command.failed';
 
     /**
      * @var \Exception
