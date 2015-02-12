@@ -6,7 +6,7 @@
 [![Build Status](https://img.shields.io/travis/thephpleague/tactician-command-events.svg?style=flat-square)](https://travis-ci.org/thephpleague/tactician-command-events)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/thephpleague/tactician-command-events.svg?style=flat-square)](https://scrutinizer-ci.com/g/thephpleague/tactician-command-events)
 [![Quality Score](https://img.shields.io/scrutinizer/g/thephpleague/tactician-command-events.svg?style=flat-square)](https://scrutinizer-ci.com/g/thephpleague/tactician-command-events)
-[![HHVM Status](https://img.shields.io/hhvm/thephpleague/tactician-command-events.svg?style=flat-square)](http://hhvm.h4cc.de/package/thephpleague/tactician-command-events)
+[![HHVM Status](https://img.shields.io/hhvm/league/tactician-command-events.svg?style=flat-square)](http://hhvm.h4cc.de/package/league/tactician-command-events)
 [![Total Downloads](https://img.shields.io/packagist/dt/league/tactician-command-events.svg?style=flat-square)](https://packagist.org/packages/league/tactician-command-events)
 
 
