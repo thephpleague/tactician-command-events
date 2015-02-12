@@ -20,12 +20,12 @@
     },
     "autoload": {
         "psr-4": {
-            "League\\Tactician\\": "src/"
+            "League\\Tactician\\CommandEvents\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "League\\Tactician\\Stub\\": "stub/"
+            "League\\Tactician\\CommandEvents\\Stub\\": "stub/"
         }
     },
     "extra": {

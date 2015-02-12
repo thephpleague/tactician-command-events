@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\League\Tactician\Stub;
+namespace spec\League\Tactician\CommandEvents\Stub;
 
 use League\Tactician\Command;
 use PhpSpec\ObjectBehavior;
@@ -14,7 +14,7 @@ class CommandEventSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('League\Tactician\Stub\CommandEvent');
+        $this->shouldHaveType('League\Tactician\CommandEvents\Stub\CommandEvent');
     }
 
     function it_is_an_event()
