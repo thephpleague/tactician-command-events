@@ -21,48 +21,7 @@ $ composer require league/tactician-command-events
 
 ## Usage
 
-When the command ran without failures:
-
-```php
-use League\Tactician\CommandBus;
-use League\Tactician\CommandEvents\EventMiddleware;
-use League\Tactician\CommandEvents\Event\CommandExecuted;
-
-// Emitter is optional
-$emitter = null;
-// $emitter = new League\Event\Emitter;
-
-$eventMiddleware = new EventMiddleware($emitter);
-
-// type-hint is optional
-$eventMiddleware->addListener('command.executed', function(CommandExecuted $event) {
-	// log the success
-});
-
-$commandBus = new CommandBus([$eventMiddleware]);
-$commandBus->execute($command);
-```
-
-
-When the command ran with failures:
-
-```php
-use League\Tactician\CommandEvents\Event\CommandFailed;
-
-$eventMiddleware->addListener('command.failed', function(CommandFailed $event) {
-	// log the failure
-	$event->catchException(); // without calling this the exception will be thrown
-});
-
-// something bad happens, exception thrown
-$commandBus->execute($command);
-```
-
-Currently available events:
-
-- `command.received`: Emitted when a command is received by the command bus
-- `command.executed`: Emitted when a command is executed without errors
-- `command.failed`: Emitted when an error occured during command execution
+Documentation is available on the [official website](http://tactician.thephpleague.com/plugins/event-middleware/).
 
 
 ## Testing
