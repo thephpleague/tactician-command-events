@@ -1,6 +1,6 @@
 <?php
 
-namespace League\Tactician\CommandEvents;
+namespace League\Tactician\CommandEvents\Event;
 
 use League\Event\Event;
 use League\Tactician\Command;

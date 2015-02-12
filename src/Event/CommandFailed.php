@@ -1,6 +1,6 @@
 <?php
 
-namespace League\Tactician\CommandEvents;
+namespace League\Tactician\CommandEvents\Event;
 
 use League\Tactician\Command;
 
@@ -12,7 +12,7 @@ class CommandFailed extends CommandEvent
     /**
      * {@inheritdoc}
      */
-    protected $name = 'commandFailed';
+    protected $name = 'command.failed';
 
     /**
      * @var \Exception

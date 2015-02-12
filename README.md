@@ -21,28 +21,25 @@ $ composer require league/tactician-command-events
 
 ## Usage
 
-Currently the following events are emitted:
-
-- `CommandReceived`: Emitted when the command bus receives the command
-- `CommandExecuted`: Emitted when the command bus successfully executes the command
-- `CommandFailed`: Emitted when the command execution failed
-
 When the command ran without failures:
 
 ```php
-use League\Event\EmitterInterface;
-use League\Tactician\EventableCommandBus;
-use League\Tactician\Event\CommandExecuted;
+use League\Tactician\CommandBus;
+use League\Tactician\CommandEvents\EventMiddleware;
+use League\Tactician\CommandEvents\Event\CommandExecuted;
 
-// $innerCommandBus = new CommandBus instance
-// $emitter = new EmitterInterface instance OR null (optional)
+// Emitter is optional
+$emitter = null;
+// $emitter = new League\Event\Emitter;
 
-$commandBus = new EventableCommandBus($innerCommandBus, $emitter);
+$eventMiddleware = new EventMiddleware($emitter);
 
-$commandBus->addListener('commandExecuted', function(CommandExecuted $event) {
+// type-hint is optional
+$eventMiddleware->addListener('command.executed', function(CommandExecuted $event) {
 	// log the success
 });
 
+$commandBus = new CommandBus([$eventMiddleware]);
 $commandBus->execute($command);
 ```
 
@@ -50,14 +47,22 @@ $commandBus->execute($command);
 When the command ran with failures:
 
 ```php
-$commandBus->addListener('commandFailed', function(CommandFailed $event) {
+use League\Tactician\CommandEvents\Event\CommandFailed;
+
+$eventMiddleware->addListener('command.failed', function(CommandFailed $event) {
 	// log the failure
-	$event->handle(); // without calling this the exception will be thrown
+	$event->catchException(); // without calling this the exception will be thrown
 });
 
 // something bad happens, exception thrown
 $commandBus->execute($command);
 ```
+
+Currently available events:
+
+- `command.received`: Emitted when a command is received by the command bus
+- `command.executed`: Emitted when a command is executed without errors
+- `command.failed`: Emitted when an error occured during command execution
 
 
 ## Testing
