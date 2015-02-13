@@ -1,6 +1,13 @@
 # Change Log
 
 
+## 0.1.1 - 2015-02-13
+
+### Changed
+
+- Upgraded [league/event](http://event.thephpleague.com/) to `~2.1`
+
+
 ## 0.1.0 - 2015-02-12
 
 ### Added
