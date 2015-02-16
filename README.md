@@ -21,7 +21,7 @@ $ composer require league/tactician-command-events
 
 ## Usage
 
-Documentation is available on the [official website](http://tactician.thephpleague.com/plugins/event-middleware/).
+Documentation is available on the [official website](http://tactician.thephpleague.com/plugins/command-events/).
 
 
 ## Testing
