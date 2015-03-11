@@ -2,13 +2,14 @@
 
 namespace League\Tactician\CommandEvents\Event;
 
-use League\Event\Event;
 use League\Tactician\Command;
 
 /**
  * Emitted when something happens with a command
+ *
+ *
  */
-abstract class CommandEvent extends Event
+trait CommandEvent
 {
     /**
      * @var Command

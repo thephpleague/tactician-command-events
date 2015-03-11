@@ -5,10 +5,12 @@ namespace League\Tactician\CommandEvents\Event;
 /**
  * Emitted when a command is received
  */
-class CommandReceived extends CommandEvent
+class CommandReceived extends Event
 {
+    use CommandEvent;
+
     /**
-     * {@inheritdoc}
+     * @var string
      */
     protected $name = 'command.received';
 }

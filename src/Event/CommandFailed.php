@@ -7,10 +7,12 @@ use League\Tactician\Command;
 /**
  * Emitted when a command fails
  */
-class CommandFailed extends CommandEvent
+class CommandFailed extends Event
 {
+    use CommandEvent;
+
     /**
-     * {@inheritdoc}
+     * @var string
      */
     protected $name = 'command.failed';
 
@@ -32,9 +34,8 @@ class CommandFailed extends CommandEvent
      */
     public function __construct(Command $command, \Exception $exception)
     {
+        $this->command = $command;
         $this->exception = $exception;
-
-        parent::__construct($command);
     }
 
     /**

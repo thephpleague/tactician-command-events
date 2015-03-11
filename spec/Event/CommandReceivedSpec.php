@@ -17,8 +17,18 @@ class CommandReceivedSpec extends ObjectBehavior
         $this->shouldHaveType('League\Tactician\CommandEvents\Event\CommandReceived');
     }
 
-    function it_is_a_command_event()
+    function it_is_an_event()
     {
-        $this->shouldHaveType('League\Tactician\CommandEvents\Event\CommandEvent');
+        $this->shouldImplement('League\Event\EventInterface');
+    }
+
+    function it_has_a_command(Command $command)
+    {
+        $this->getCommand()->shouldreturn($command);
+    }
+
+    function it_has_a_name()
+    {
+        $this->getName()->shouldReturn('command.received');
     }
 }

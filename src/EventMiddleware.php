@@ -5,7 +5,6 @@ namespace League\Tactician\CommandEvents;
 use League\Event\EmitterAwareInterface;
 use League\Event\EmitterInterface;
 use League\Event\EmitterTrait;
-use League\Tactician\CommandEvents\Event;
 use League\Tactician\Command;
 use League\Tactician\Middleware;
 

@@ -5,10 +5,12 @@ namespace League\Tactician\CommandEvents\Event;
 /**
  * Emitted when a command is executed
  */
-class CommandExecuted extends CommandEvent
+class CommandExecuted extends Event
 {
+    use CommandEvent;
+
     /**
-     * {@inheritdoc}
+     * @var string
      */
     protected $name = 'command.executed';
 }
