@@ -10,6 +10,11 @@ use League\Event\AbstractEvent;
 abstract class Event extends AbstractEvent
 {
     /**
+     * @var string
+     */
+    protected $name;
+
+    /**
      * {@inheritdoc}
      */
     public function getName()
