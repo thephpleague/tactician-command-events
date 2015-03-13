@@ -23,11 +23,6 @@
             "League\\Tactician\\CommandEvents\\": "src/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "League\\Tactician\\CommandEvents\\Stub\\": "stub/"
-        }
-    },
     "extra": {
         "branch-alias": {
             "dev-master": "0.2-dev"
