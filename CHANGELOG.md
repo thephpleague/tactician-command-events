@@ -1,15 +1,16 @@
 # Change Log
 
 
-## Unreleased
+## 0.2.0 - 2015-03-14
 
 ### Added
 
-- Custom abstract `Event` (as a workaround to prevent constructor name overriding)
+- CommandEvent interface
 
 ### Changed
 
-- `CommandEvent` logic moved to trait
+- `CommandEvent` logic moved to `HasCommand` trait
+- Travis config
 
 ### Removed
 
