@@ -5,7 +5,7 @@ namespace League\Tactician\CommandEvents\Event;
 use League\Tactician\Command;
 
 /**
- * Emitted when something happens with a command
+ * Holds the command object for an event
  */
 trait HasCommand
 {
