@@ -6,9 +6,9 @@ use League\Event\Event;
 use League\Tactician\Command;
 
 /**
- * Emitted when a command is executed
+ * Emitted when a command is handled
  */
-class CommandExecuted extends Event implements CommandEvent
+class CommandHandled extends Event implements CommandEvent
 {
     use HasCommand;
 
@@ -19,6 +19,6 @@ class CommandExecuted extends Event implements CommandEvent
     {
         $this->command = $command;
 
-        parent::__construct('command.executed');
+        parent::__construct('command.handled');
     }
 }

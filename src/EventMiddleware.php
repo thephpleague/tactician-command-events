@@ -33,7 +33,7 @@ class EventMiddleware implements Middleware, EmitterAwareInterface
 
             $returnValue = $next($command);
 
-            $this->getEmitter()->emit(new Event\CommandExecuted($command));
+            $this->getEmitter()->emit(new Event\CommandHandled($command));
 
             return $returnValue;
         } catch (\Exception $e) {

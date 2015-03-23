@@ -32,7 +32,7 @@ class EventMiddlewareSpec extends ObjectBehavior
     function it_executes_a_command(Command $command, Emitter $emitter)
     {
         $emitter->emit(Argument::type('League\Tactician\CommandEvents\Event\CommandReceived'))->shouldBeCalled();
-        $emitter->emit(Argument::type('League\Tactician\CommandEvents\Event\CommandExecuted'))->shouldBeCalled();
+        $emitter->emit(Argument::type('League\Tactician\CommandEvents\Event\CommandHandled'))->shouldBeCalled();
 
         $this->execute($command, function() {});
     }

@@ -5,7 +5,7 @@ namespace spec\League\Tactician\CommandEvents\Event;
 use League\Tactician\Command;
 use PhpSpec\ObjectBehavior;
 
-class CommandExecutedSpec extends ObjectBehavior
+class CommandHandledSpec extends ObjectBehavior
 {
     function let(Command $command)
     {
@@ -14,7 +14,7 @@ class CommandExecutedSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('League\Tactician\CommandEvents\Event\CommandExecuted');
+        $this->shouldHaveType('League\Tactician\CommandEvents\Event\CommandHandled');
     }
 
     function it_is_an_event()
@@ -29,6 +29,6 @@ class CommandExecutedSpec extends ObjectBehavior
 
     function it_has_a_name()
     {
-        $this->getName()->shouldReturn('command.executed');
+        $this->getName()->shouldReturn('command.handled');
     }
 }

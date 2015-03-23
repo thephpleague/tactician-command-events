@@ -1,6 +1,13 @@
 # Change Log
 
 
+## Unreleased
+
+### Changed
+
+- `CommandExecuted` is renamed to `CommandHandled` to be consistent with the core package changes
+
+
 ## 0.2.0 - 2015-03-14
 
 ### Added
