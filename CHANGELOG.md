@@ -1,11 +1,16 @@
 # Change Log
 
 
-## Unreleased
+## 0.3.0 - 2015-03-30
+
+### Added
+
+- Comand stub for testing
 
 ### Changed
 
 - `CommandExecuted` is renamed to `CommandHandled` to be consistent with the core package changes
+- The `Command` interface from Tactician is no longer required
 
 
 ## 0.2.0 - 2015-03-14

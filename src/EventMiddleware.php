@@ -5,7 +5,6 @@ namespace League\Tactician\CommandEvents;
 use League\Event\EmitterAwareInterface;
 use League\Event\EmitterInterface;
 use League\Event\EmitterTrait;
-use League\Tactician\Command;
 use League\Tactician\Middleware;
 
 /**
@@ -26,7 +25,7 @@ class EventMiddleware implements Middleware, EmitterAwareInterface
     /**
      * {@inheritdoc}
      */
-    public function execute(Command $command, callable $next)
+    public function execute($command, callable $next)
     {
         try {
             $this->getEmitter()->emit(new Event\CommandReceived($command));
