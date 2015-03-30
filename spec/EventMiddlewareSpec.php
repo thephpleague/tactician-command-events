@@ -3,7 +3,7 @@
 namespace spec\League\Tactician\CommandEvents;
 
 use League\Event\EmitterInterface as Emitter;
-use League\Tactician\Command;
+use League\Tactician\CommandEvents\Stub\Command;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

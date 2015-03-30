@@ -3,7 +3,6 @@
 namespace League\Tactician\CommandEvents\Event;
 
 use League\Event\Event;
-use League\Tactician\Command;
 
 /**
  * Emitted when a command is failed
@@ -25,10 +24,10 @@ class CommandFailed extends Event implements CommandEvent
     protected $exceptionCaught = false;
 
     /**
-     * @param Command    $command
+     * @param object     $command
      * @param \Exception $exception
      */
-    public function __construct(Command $command, \Exception $exception)
+    public function __construct($command, \Exception $exception)
     {
         $this->command = $command;
         $this->exception = $exception;

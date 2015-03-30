@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "league/tactician": "^0.3",
+        "league/tactician": "^0.4",
         "league/event": "~2.1"
     },
     "require-dev": {
@@ -23,9 +23,14 @@
             "League\\Tactician\\CommandEvents\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "League\\Tactician\\CommandEvents\\Stub\\": "stubs/"
+        }
+    },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.2-dev"
+            "dev-master": "0.4-dev"
         }
     },
     "prefer-stable": true,
