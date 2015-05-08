@@ -1,4 +1,5 @@
 # Change Log
+
 ## 0.4.0 - 2015-05-08
 Updated for Tactician 0.6
 
