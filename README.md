@@ -27,7 +27,7 @@ Documentation is available on the [official website](http://tactician.thephpleag
 ## Testing
 
 ``` bash
-$ phpspec run
+$ ./vendor/bin/phpspec run
 ```
 
 
