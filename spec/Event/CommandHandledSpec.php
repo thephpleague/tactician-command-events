@@ -2,7 +2,7 @@
 
 namespace spec\League\Tactician\CommandEvents\Event;
 
-use League\Tactician\CommandEvents\Stub\Command;
+use spec\League\Tactician\CommandEvents\Command;
 use PhpSpec\ObjectBehavior;
 
 class CommandHandledSpec extends ObjectBehavior

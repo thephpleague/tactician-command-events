@@ -12,11 +12,11 @@
     ],
     "require": {
         "league/tactician": "^1.0",
-        "league/event": "~2.1"
+        "league/event": "^2.1"
     },
     "require-dev": {
-        "phpspec/phpspec": "~2.1",
-        "henrikbjorn/phpspec-code-coverage" : "~1.0"
+        "phpspec/phpspec": "^2.4",
+        "henrikbjorn/phpspec-code-coverage" : "^1.0"
     },
     "autoload": {
         "psr-4": {
@@ -25,14 +25,16 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "League\\Tactician\\CommandEvents\\Stub\\": "stubs/"
+            "spec\\League\\Tactician\\CommandEvents\\": "spec/"
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpspec run",
+        "test-ci": "vendor/bin/phpspec run -c phpspec.yml.ci"
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.6-dev"
+            "dev-master": "0.7-dev"
         }
-    },
-    "prefer-stable": true,
-    "minimum-stability": "dev"
+    }
 }
