@@ -30,6 +30,8 @@ Documentation is available on the [official website](http://tactician.thephpleag
 $ ./vendor/bin/phpspec run
 ```
 
+## Security
+Disclosure information can be found on [the main Tactician repo](https://github.com/thephpleague/tactician#security).
 
 ## Contributing
 
