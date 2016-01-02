@@ -19,7 +19,7 @@ $ composer require league/tactician-command-events
 ```
 
 
-## Usage
+## Documentation
 
 Documentation is available on the [official website](http://tactician.thephpleague.com/plugins/command-events/).
 
@@ -27,15 +27,18 @@ Documentation is available on the [official website](http://tactician.thephpleag
 ## Testing
 
 ``` bash
-$ ./vendor/bin/phpspec run
+$ composer test
 ```
 
-## Security
-Disclosure information can be found on [the main Tactician repo](https://github.com/thephpleague/tactician#security).
 
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+
+## Security
+
+Disclosure information can be found on [the main Tactician repo](https://github.com/thephpleague/tactician#security).
 
 
 ## Credits

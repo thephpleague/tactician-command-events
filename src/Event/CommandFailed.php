@@ -5,7 +5,7 @@ namespace League\Tactician\CommandEvents\Event;
 use League\Event\Event;
 
 /**
- * Emitted when a command is failed
+ * Emitted when a command is failed.
  */
 class CommandFailed extends Event implements CommandEvent
 {
@@ -17,9 +17,9 @@ class CommandFailed extends Event implements CommandEvent
     protected $exception;
 
     /**
-     * Checks whether exception is caught
+     * Checks whether exception is caught.
      *
-     * @var boolean
+     * @var bool
      */
     protected $exceptionCaught = false;
 
@@ -36,7 +36,7 @@ class CommandFailed extends Event implements CommandEvent
     }
 
     /**
-     * Returns the exception
+     * Returns the exception.
      *
      * @return \Exception
      */
@@ -46,7 +46,7 @@ class CommandFailed extends Event implements CommandEvent
     }
 
     /**
-     * Indicates that exception is caught
+     * Indicates that exception is caught.
      */
     public function catchException()
     {
@@ -54,9 +54,9 @@ class CommandFailed extends Event implements CommandEvent
     }
 
     /**
-     * Checks whether exception is caught
+     * Checks whether exception is caught.
      *
-     * @return boolean
+     * @return bool
      */
     public function isExceptionCaught()
     {

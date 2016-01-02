@@ -3,7 +3,7 @@
 namespace League\Tactician\CommandEvents\Event;
 
 /**
- * Holds the command object for an event
+ * Holds the command object for an event.
  */
 trait HasCommand
 {
@@ -13,7 +13,7 @@ trait HasCommand
     protected $command;
 
     /**
-     * Returns the command
+     * Returns the command.
      *
      * @return object
      */

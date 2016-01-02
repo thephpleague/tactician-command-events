@@ -5,7 +5,7 @@ namespace League\Tactician\CommandEvents\Event;
 use League\Event\Event;
 
 /**
- * Emitted when a command is handled
+ * Emitted when a command is handled.
  */
 class CommandHandled extends Event implements CommandEvent
 {

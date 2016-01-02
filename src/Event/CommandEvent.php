@@ -5,12 +5,12 @@ namespace League\Tactician\CommandEvents\Event;
 use League\Tactician\Command;
 
 /**
- * Emitted when something happens with a command
+ * Emitted when something happens with a command.
  */
 interface CommandEvent
 {
     /**
-     * Returns the command
+     * Returns the command.
      *
      * @return Command
      */

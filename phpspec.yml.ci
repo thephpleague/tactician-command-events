@@ -1,10 +1,10 @@
 suites:
-  tactician_suite:
-    namespace: League\Tactician\CommandEvents
-    psr4_prefix: League\Tactician\CommandEvents
+    tactician_command_events_suite:
+        namespace: League\Tactician\CommandEvents
+        psr4_prefix: League\Tactician\CommandEvents
 extensions:
-  - PhpSpec\Extension\CodeCoverageExtension
+    - PhpSpec\Extension\CodeCoverageExtension
 formatter.name: pretty
 code_coverage:
-  format: clover
-  output: build/coverage.xml
+    format: clover
+    output: build/coverage.xml
