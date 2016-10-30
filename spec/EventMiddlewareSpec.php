@@ -2,12 +2,17 @@
 
 namespace spec\League\Tactician\CommandEvents;
 
+use League\Event\EmitterAwareInterface;
 use League\Event\EmitterInterface as Emitter;
-use League\Tactician\CommandEvents\Stub\Command;
+use League\Tactician\CommandEvents\Event\CommandFailed;
+use League\Tactician\CommandEvents\Event\CommandHandled;
+use League\Tactician\CommandEvents\Event\CommandReceived;
+use League\Tactician\CommandEvents\EventMiddleware;
+use League\Tactician\Middleware;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class EventMiddlewareSpec extends ObjectBehavior
+final class EventMiddlewareSpec extends ObjectBehavior
 {
     function let(Emitter $emitter)
     {
@@ -16,40 +21,40 @@ class EventMiddlewareSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('League\Tactician\CommandEvents\EventMiddleware');
+        $this->shouldHaveType(EventMiddleware::class);
     }
 
     function it_is_a_middleware()
     {
-        $this->shouldImplement('League\Tactician\Middleware');
+        $this->shouldImplement(Middleware::class);
     }
 
     function it_is_aan_emitter_aware()
     {
-        $this->shouldImplement('League\Event\EmitterAwareInterface');
+        $this->shouldImplement(EmitterAwareInterface::class);
     }
 
     function it_executes_a_command(Command $command, Emitter $emitter)
     {
-        $emitter->emit(Argument::type('League\Tactician\CommandEvents\Event\CommandReceived'))->shouldBeCalled();
-        $emitter->emit(Argument::type('League\Tactician\CommandEvents\Event\CommandHandled'))->shouldBeCalled();
+        $emitter->emit(Argument::type(CommandReceived::class))->shouldBeCalled();
+        $emitter->emit(Argument::type(CommandHandled::class))->shouldBeCalled();
 
         $this->execute($command, function() {});
     }
 
     function it_executes_a_faulty_command_and_fails(Command $command, Emitter $emitter)
     {
-        $emitter->emit(Argument::type('League\Tactician\CommandEvents\Event\CommandFailed'))->shouldBeCalled();
+        $emitter->emit(Argument::type(CommandFailed::class))->shouldBeCalled();
 
-        $this->shouldThrow('Exception')->duringExecute($command, function() {});
+        $this->shouldThrow(\Exception::class)->duringExecute($command, function() {});
     }
 
     function it_executes_a_faulty_command_and_handles_the_exception(Command $command, Emitter $emitter)
     {
-        $emitter->emit(Argument::type('League\Tactician\CommandEvents\Event\CommandFailed'))->will(function($args) {
+        $emitter->emit(Argument::type(CommandFailed::class))->will(function($args) {
             $args[0]->catchException();
         });
 
-        $this->shouldNotThrow('Exception')->duringExecute($command, function() {});
+        $this->shouldNotThrow(\Exception::class)->duringExecute($command, function() {});
     }
 }

@@ -10,7 +10,7 @@ use League\Tactician\Middleware;
 /**
  * Provides an event-driven middleware functionality
  */
-class EventMiddleware implements Middleware, EmitterAwareInterface
+final class EventMiddleware implements Middleware, EmitterAwareInterface
 {
     use EmitterTrait;
 

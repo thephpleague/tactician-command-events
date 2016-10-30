@@ -7,7 +7,7 @@ use League\Event\Event;
 /**
  * Emitted when a command is handled
  */
-class CommandHandled extends Event implements CommandEvent
+final class CommandHandled extends Event implements CommandEvent
 {
     use HasCommand;
 
