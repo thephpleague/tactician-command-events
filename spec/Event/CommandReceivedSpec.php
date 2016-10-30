@@ -2,10 +2,13 @@
 
 namespace spec\League\Tactician\CommandEvents\Event;
 
-use League\Tactician\CommandEvents\Stub\Command;
+use League\Event\EventInterface;
+use League\Tactician\CommandEvents\Event\CommandEvent;
+use League\Tactician\CommandEvents\Event\CommandReceived;
+use spec\League\Tactician\CommandEvents\Command;
 use PhpSpec\ObjectBehavior;
 
-class CommandReceivedSpec extends ObjectBehavior
+final class CommandReceivedSpec extends ObjectBehavior
 {
     function let(Command $command)
     {
@@ -14,17 +17,22 @@ class CommandReceivedSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('League\Tactician\CommandEvents\Event\CommandReceived');
+        $this->shouldHaveType(CommandReceived::class);
+    }
+
+    function it_is_a_command_event()
+    {
+        $this->shouldImplement(CommandEvent::class);
     }
 
     function it_is_an_event()
     {
-        $this->shouldImplement('League\Event\EventInterface');
+        $this->shouldImplement(EventInterface::class);
     }
 
     function it_has_a_command(Command $command)
     {
-        $this->getCommand()->shouldreturn($command);
+        $this->getCommand()->shouldReturn($command);
     }
 
     function it_has_a_name()

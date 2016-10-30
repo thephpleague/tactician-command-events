@@ -7,7 +7,7 @@ use League\Event\Event;
 /**
  * Emitted when a command is failed
  */
-class CommandFailed extends Event implements CommandEvent
+final class CommandFailed extends Event implements CommandEvent
 {
     use HasCommand;
 
@@ -19,7 +19,7 @@ class CommandFailed extends Event implements CommandEvent
     /**
      * Checks whether exception is caught
      *
-     * @var boolean
+     * @var bool
      */
     protected $exceptionCaught = false;
 
@@ -56,7 +56,7 @@ class CommandFailed extends Event implements CommandEvent
     /**
      * Checks whether exception is caught
      *
-     * @return boolean
+     * @return bool
      */
     public function isExceptionCaught()
     {

@@ -1,7 +1,19 @@
 # Change Log
 
+
+## 0.6.0 - 2015-12-31
+
+### Added
+
+- Security disclosure note
+
+
 ## 0.4.0 - 2015-05-08
-Updated for Tactician 0.6
+
+### Changed
+
+- Updated for Tactician 0.6
+
 
 ## 0.3.0 - 2015-03-30
 

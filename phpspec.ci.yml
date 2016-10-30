@@ -3,3 +3,8 @@ suites:
         namespace: League\Tactician\CommandEvents
         psr4_prefix: League\Tactician\CommandEvents
 formatter.name: pretty
+extensions:
+    - PhpSpec\Extension\CodeCoverageExtension
+code_coverage:
+    format: clover
+    output: build/coverage.xml
