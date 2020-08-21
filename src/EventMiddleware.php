@@ -29,13 +29,11 @@ final class EventMiddleware implements Middleware, EmitterAwareInterface
     {
         try {
             $this->getEmitter()->emit(new Event\CommandReceived($command));
-
             $returnValue = $next($command);
-
             $this->getEmitter()->emit(new Event\CommandHandled($command));
 
             return $returnValue;
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             $this->getEmitter()->emit($event = new Event\CommandFailed($command, $e));
 
             if (!$event->isExceptionCaught()) {
