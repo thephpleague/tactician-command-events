@@ -7,6 +7,8 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/thephpleague/tactician-command-events.svg?style=flat-square)](https://scrutinizer-ci.com/g/thephpleague/tactician-command-events)
 [![Total Downloads](https://img.shields.io/packagist/dt/league/tactician-command-events.svg?style=flat-square)](https://packagist.org/packages/league/tactician-command-events)
 
+*IMPORTANT: This package is abandoned. Instead of integrating against Tactician with events, it's recommended to [write a Middleware instead](https://tactician.thephpleague.com/middleware/) which can offer the same features but with a simpler interface*
+
 
 ## Install
 
